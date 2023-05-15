@@ -1,8 +1,8 @@
 Django Project
-Projekt to aplikacja webowa typu social media a'la twitter.
+Project is a social media web app. It resembles twitter.
 
 Prerequisites:
-Python (version 3.10.9)
+Python (version 3.10.9),
 Django (version 4.1.7)
 
 Installation:
