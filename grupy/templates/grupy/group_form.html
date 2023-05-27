@@ -1,0 +1,15 @@
+{% extends 'grupy/templates/grupy/group_base.html' %}
+{% load bootstrap5 %}
+
+{% block group_content %}
+    <div class="container">
+        <h2>Create new group</h2>
+        <form method = "POST" action = "{% url 'groups:create' %}">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            {% buttons %}
+                <button type="submit" class="btn btn-outline-dark">Create</button>
+            {% endbuttons %}
+        </form>
+    </div>
+{% endblock group_content %}

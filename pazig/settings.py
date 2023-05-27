@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'grupy',
     'konta',
     'posty',
+    'bootstrap5',
 ]
 
 MIDDLEWARE = [
@@ -125,6 +126,9 @@ STATIC_URL = "static/"
 STATICFILES_DIRS = [
     STATIC_DIR,
 ]
+
+LOGIN_REDIRECT_URL = 'test'
+LOGOUT_REDIRECT_URL = 'thanks'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

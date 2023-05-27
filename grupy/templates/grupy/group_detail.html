@@ -1,0 +1,32 @@
+{% extends 'grupy/templates/grupy/group_base.html' %}
+
+{% block pregroup %}
+    <h1>{{ group.name }}</h1>
+    <h2>Member count: {{ group.members.count }}</h2>
+
+    <div>
+        {% if user in group.members.all %}
+        <button type="button" class="btn btn-outline-danger"><a href="{% url 'groups:leave slug=group.slug' %}">Leave</a></button>
+            
+        {% else %}
+        <button type="button" class="btn btn-outline-danger"><a href="{% url 'groups:join slug=group.slug' %}">Join</a></button>
+        {% endif %}
+        
+    </div>
+{% endblock pregroup %}
+
+{% block group_content %}
+
+    <div class="col-mid-8">
+        {% if group.posts.count == 0 %}
+            <h2>No posts yet.</h2>
+        {% else %}
+        {% for post in group.posts.all %}
+            {% include 'posty/_post.html' %}
+            
+        {% endfor %}
+        {% endif %}
+    </div>
+
+{% endblock group_content %}
+
