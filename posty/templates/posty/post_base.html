@@ -2,8 +2,10 @@
 
 {% block body_block %}
 <div class="container">
-    {% block prepost %}{% endblock prepost %}
-    {% block post_content %}{% endblock post_content %}
-    {% block post_post %}{% endblock post_post %}
+    <div class = "row">
+        {% block pre_post %}{% endblock pre_post %}
+        {% block post_content %}{% endblock post_content %}
+        {% block post_post %}{% endblock post_post %}
+    </div>
 </div>
 {% endblock body_block %}

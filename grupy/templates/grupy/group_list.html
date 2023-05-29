@@ -1,0 +1,44 @@
+{% extends 'grupy/group_base.html' %}
+
+{% block pregroup %}
+    <div class = "col-md-4">
+        <div>
+            {% if user.is_authenticated %}
+            <h2>Welcome back
+                <a href="{% url 'posts:for_user' username = user.username %}">@{{ user.username }}</a>
+            </h2>
+            {% endif %}
+            <h2>Groups</h2>
+            <p>Groups page</p>
+        </div>
+        {% if user.is_authenticated %}
+        <button type="button" class="btn btn-outline-dark"><a href="{% url 'grupy:create'%}">Create New Group</a></button>
+        {% else %}
+        {% endif %}
+    </div>
+{% endblock pregroup %}
+
+{% block group_content %}
+    <div class="col-md-8">
+        <div>
+            {% for group in object_list %}
+                <a href="{% url 'grupy:single' %} slug = group.slug">
+                    <h3>{{ group.name }}</h3>
+                    <div class = "container-fluid">
+                        {{ group.description_html|safe }}
+                        <div class="row">
+                            <div class = "col-md-4">
+                                <span class="badge">{{group.members.count}}</span>
+                                Member{{group.members.count|pluralize}}
+                            </div>                           
+                            <div class = "col-md-4">
+                                <span class="badge">{{group.posts.count}}</span>
+                                Post{{group.posts.count|pluralize}}
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock group_content %}
