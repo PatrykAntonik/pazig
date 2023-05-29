@@ -1,5 +1,12 @@
-<!DOCTYPE html>
-{% extends 'base.html' %}
-{% block body_block %}
-    <h1>Projekt social media</h1>
-{% endblock body_block %}
+{% extends 'grupy/group_base.html' %}
+
+{% block pregroup %}
+    <div class="col-md-4">
+        <div>
+            {% if user.is_authenticated %}
+            <h2>Welcome back
+                <a href="{% url 'posts:for_user' username=user.username %}">@{{ user.username }}</a>
+            </h2>
+            {% endif %}
+    </div>
+{% endblock pregroup %}
