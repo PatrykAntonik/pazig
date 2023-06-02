@@ -1,12 +1,32 @@
-{% extends 'grupy/group_base.html' %}
-
-{% block pregroup %}
-    <div class="col-md-4">
-        <div>
-            {% if user.is_authenticated %}
-            <h2>Welcome back
-                <a href="{% url 'posts:for_user' username=user.username %}">@{{ user.username }}</a>
-            </h2>
-            {% endif %}
+{% extends 'base.html' %}
+{% load static %}
+{% block body_block %}
+<link href="{% static 'home.css' %}" rel="stylesheet" />
+<div class="container-fluid title-div">
+    <section id="title" class="container-fluid">
+        <div class="row">
+                <div class="col-lg-6 col-md-12" id="describtion">
+                    <h1 class="title-heading">Meet new and interesting people</h1>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <img src="static/images/contact.png" alt="social-photo" class="title-image" />
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<footer id="footer" class="white-section">
+    <div class="container-fluid">
+      <a href="https://www.linkedin.com/in/patryk-antonik-572256266/">
+          <i class="fa-brands fa-linkedin fa-xl footer-icon"></i>
+      </a>
+      <a href="https://github.com/PatrykAntonik">
+          <i class="fa-brands fa-github fa-xl footer-icon"></i>
+      </a>
+      <a href="mailto:patryka2000@gmail.com">
+          <i class="fa-solid fa-envelope fa-xl footer-icon"></i>
+      </a>
+      <p class="section-text">©Patryk Antonik</p>
     </div>
-{% endblock pregroup %}
+</footer>
+{% endblock body_block %}

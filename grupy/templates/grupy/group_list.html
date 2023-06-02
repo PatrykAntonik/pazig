@@ -1,37 +1,35 @@
 {% extends 'grupy/group_base.html' %}
 
 {% block pregroup %}
-    <div class="col-md-4">
-        <div>
-            <h2>Groups</h2>
-        </div>
+<div class="col-lg-3 col-md-12">
+        <h2 class="h2-form2">Groups</h2>
         {% if user.is_authenticated %}
-        <button type="button" class="btn btn-outline-dark"><a href="{% url 'groups:create' %}">Create New Group</a></button>
+        <button type="button" class="btn btn-outline-light btn-lg group-btn" onclick="location.href='{% url 'groups:create' %}'">Create New Group</button>
         {% endif %}
     </div>
 {% endblock pregroup %}
 
 {% block group_content %}
-    <div class="col-md-8">
-        <div>
+    <div class="col-lg-9 col-md-12">
             {% for group in object_list %}
-                <a href="{% url 'groups:single' slug=group.slug %}">
-                    <h3>{{ group.name }}</h3>
-                    <div class="container-fluid">
-                        {{ group.description_html|safe }}
-                        <div class="row">
-                            <div class="col-md-4">
-                                <span class="badge">{{ group.members.count }}</span>
-                                Member{{ group.members.count|pluralize }}
-                            </div>
-                            <div class="col-md-4">
-                                <span class="badge">{{ group.posts.count }}</span>
-                                Post{{ group.posts.count|pluralize }}
-                            </div>
+            <div class="container-fluid whole-div">
+                <div class="col-12">
+                    <a class="group-a" href="{% url 'groups:single' slug=group.slug %}">
+                        <h3>{{ group.name }}</h3>
+                    </a>
+                </div>
+                    <div class="row group-row">
+                        <div class="col-12">
+                            Post{{ group.posts.count|pluralize }}
+                            <span class="badge">{{ group.posts.count }}</span>
+                            Member{{ group.members.count|pluralize }}
+                            <span class="badge">{{ group.members.count }}</span>
                         </div>
                     </div>
-                </a>
+                    <div class="opis">
+                        {{ group.description_html|safe }}
+                    </div>
+            </div>
             {% endfor %}
-        </div>
     </div>
 {% endblock group_content %}

@@ -1,16 +1,16 @@
 {% extends 'base.html' %}
-
 {% load bootstrap5 %}
-
 {% block body_block %}
-    <div class="container">
-        <h1>Registration</h1>
-        <form method = "POST">
-            {% csrf_token %}
-            {% bootstrap_form form %}
-            {% buttons %}
-                <button type="submit" class="btn btn-outline-dark">Register</button>
-            {% endbuttons %}
-        </form>
+    <div class="container-fluid register-container">
+        <div class="col-12">
+            <h1 class="register-title">Registration</h1>
+            <form method = "POST">
+                {% csrf_token %}
+                {% bootstrap_form form %}
+                {% buttons %}
+                    <button type="submit" class="btn btn-outline-light btn-lg login-btn register-btn">Register</button>
+                {% endbuttons %}
+            </form>
+        </div>
     </div>
 {% endblock body_block %}

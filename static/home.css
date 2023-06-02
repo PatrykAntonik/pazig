@@ -1,0 +1,60 @@
+/* TITLE */
+
+#title{
+    padding: 1.5% 15% 14% 1.5%;
+    text-align: left;
+    background-color: #19A7CE;
+}
+
+#describtion {
+    margin-left: -100px;
+    position: relative;
+}
+
+.title-heading {
+    font-size: 3.5rem;
+}
+
+.title-image {
+    transform: rotate(10deg);
+    width: 400px;
+    height: auto;
+    position: absolute;
+    right: 20%;
+}
+
+
+/* FOOTER */
+
+#footer .container-fluid {
+    padding: 3% 15% 1.5%;
+    background-color: #FFF;
+    text-align: center;
+}
+
+
+.section-text {
+    color: #000;
+}
+
+.footer-icon {
+    margin: 0 10px 20px 10px;
+    color: black;
+}
+
+@media (max-width: 1300px) {
+    .title-image {
+        position: static;
+        margin-left: 65px;
+        margin-top: 50px;
+        display: block;
+        width: 80%;
+        height: auto;
+        transform: rotate(0);
+    }
+
+    .title-heading {
+        font-size: 3.5rem;
+        text-align: center;
+    }
+}

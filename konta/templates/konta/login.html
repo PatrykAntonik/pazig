@@ -1,16 +1,22 @@
-{% extends 'base.html' %}
-
+{% extends 'base.html' %} 
 {% load bootstrap5 %}
-
 {% block body_block %}
-    <div class="container">
-        <h1>Login</h1>
-        <form method = "POST">
-            {% csrf_token %}
-            {% bootstrap_form form %}
-            {% buttons %}
-                <button type="submit" class="btn btn-outline-dark">Login</button>
-            {% endbuttons %}
-        </form>
+<div class="container-fluid login-container">
+  <div class="row">
+    <div class="col-lg-6 col-md-12 login-div">
+      <img
+        class="user-image"
+        src="https://cdn-icons-png.flaticon.com/512/848/848043.png?w=826&t=st=1685545988~exp=1685546588~hmac=152ae506bdb61832c96382b8a40811e7aa1b0d28a0a7c503a1cac6736ab1e351"
+        alt="jpg"/>
+      <h1 class="login-title">Login</h1>
     </div>
+    <div class="col-lg-6 col-md-12 form-div">
+      <form method="POST" class="login-form">
+        {% csrf_token %}{% bootstrap_form form %}{% buttons %}
+        <button type="submit" class="btn btn-outline-light btn-lg login-btn">Login</button>
+        {% endbuttons %}
+      </form>
+    </div>
+  </div>
+</div>
 {% endblock body_block %}

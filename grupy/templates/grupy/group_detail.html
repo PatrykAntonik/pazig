@@ -6,10 +6,10 @@
 {% if user.is_authenticated %}
     <div>
         {% if user in group.members.all %}
-        <button type="button" class="btn btn-outline-danger"><a href="{% url 'groups:leave' slug=group.slug %}">Leave</a></button>
+        <button type="button" class="btn btn-outline-light btn-lg "><a href="{% url 'groups:leave' slug=group.slug %}">Leave</a></button>
         
         {% else %}
-        <button type="button" class="btn btn-outline-danger"><a href="{% url 'groups:join' slug=group.slug %}">Join</a></button>
+        <button type="button" class="btn btn-outline-light btn-lg "><a href="{% url 'groups:join' slug=group.slug %}">Join</a></button>
         {% endif %}
         
     </div>

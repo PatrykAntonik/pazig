@@ -1,0 +1,238 @@
+/* ! BASE HTML */
+
+body {
+    font-family: 'Montserrat';
+    background-color: #19A7CE;
+    text-align: center;
+    color: white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    /* font-weight: bold; */
+    line-height: 1.5;
+}
+
+
+.container-fluid {
+    padding: 2% 15%;
+}
+
+/* !NAVBAR */
+
+.navbar-brand {
+    font-family: "Montserrat";
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.nav-div {
+    background-color: #19A7CE;
+}
+
+.nav-link {
+    font-family: "Montserrat";
+    font-size: 2rem;
+}
+
+.nav-item {
+    margin: 0 20px;
+}
+
+
+/* ! LOGIN TITLE & IMG */
+
+.user-image {
+    width: 80px;
+    height: auto;
+    filter: invert(100%);
+    position: relative;
+    margin-bottom: 15px;
+    margin-right: 200px;
+}
+
+.login-div {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.login-btn {
+    margin-top: 20px;
+    width: 50%;
+    font-size: 1.5rem;
+    border-radius: 15px;
+}
+
+.login-title {
+    text-align: center;
+    font-size: 3rem;
+    margin-top: 15px;
+    margin-right: 200px;
+}
+
+.login-container {
+    padding: 7% ;
+    text-align: center;
+}
+
+/* ! LOGIN FORM */
+
+.form-label {
+    font-size: 2rem;
+}
+
+.form-control {
+    border-radius: 15px;
+    font-size: 1.2rem;
+}
+
+.form-div label {
+    text-align: left;
+}
+
+.login-form {
+    margin-left: auto;
+    margin-right: auto;
+    width: 65%;
+}
+
+/*! REGISTER */
+
+.register-container {
+    width: 80%;
+    margin-top: -30px;
+}
+
+.register-btn {
+    text-align: center;
+}
+
+.form-text {
+    text-align: left;
+}
+
+.register-title {
+    margin-bottom: 30px;
+}
+
+/*! POSTS */
+
+.btn-post {
+    width: 20%;
+    margin-top: 30px;
+}
+
+.containter-form {
+    margin-top: -30px;
+}
+
+#id_message, #id_description {
+    resize: none;
+    border-radius: 25px;
+    font-size: 1.5rem;
+    height: 200px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#id_group, #id_name  {
+    border-radius: 15px;
+    font-size: 1.2rem;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+label.form-label[for="id_message"] {
+    display: none;
+}
+
+.form-select {
+    border-radius: 15px;
+}
+
+.h2-form {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    font-size: 3rem;
+}
+
+
+/* ! AFTER LOGIN */
+
+.welcome {
+    font-size: 2.5rem;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+/* !GROUPS */
+
+.h2-form2 {
+    margin-bottom: 50px;
+    font-size: 3rem;
+}
+
+a {
+    color: #146C94;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.group-row {
+    margin-bottom: 20px;
+}
+
+.opis {
+    font-size: 1.5rem;
+    font-weight:500;
+}
+
+.whole-div {
+    text-align: left;
+    margin-left: 200px;
+}
+
+/* !MEDIA QUERIES */
+
+@media (max-width: 990px) {
+    .login-title {
+        margin-top: -10px;
+        margin-bottom: 20px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .user-image {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .login-btn {
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    .whole-div {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .group-btn {
+        margin-top: -20px;
+        margin-bottom: 50px;
+    }
+}
+
+
+
