@@ -1,14 +1,18 @@
 <div>
-  <h3>{{ post.message_html|safe }}</h3>
-  <div>
+  <h3 class="post-message">{{ post.message_html|safe }}</h3>
+  <div class="post-info">
     <h5>
       <span>
-        <a href="{% url 'posts:for_user' username=post.user.username %}">@{{post.user.username}}</a>
+        <a class="post-info" href="{% url 'posts:for_user' username=post.user.username %}">@{{post.user.username}}</a>
       </span>
       <time datetime="">
-        <a href="{% url 'posts:single' username=post.user.username pk=post.pk %}">{{post.created_at}}</a>
+        <a class="post-info" href="{% url 'posts:single' username=post.user.username pk=post.pk %}">{{post.created_at}}</a>
       </time>
     </h5>
-
+    {% if group and not hide_group_name and not group_list %}
+    <div class="group-tag">
+        Posted in: {{ group.name }}
+    </div>
+    {% endif %}
   </div>
 </div>

@@ -10,14 +10,13 @@
 {% endblock pregroup %}
 
 {% block group_content %}
-    <div class="col-lg-9 col-md-12">
+    <div class="col-lg-6 col-md-12 big-div">
             {% for group in object_list %}
-            <div class="container-fluid whole-div">
-                <div class="col-12">
-                    <a class="group-a" href="{% url 'groups:single' slug=group.slug %}">
+            <a class="group-a" href="{% url 'groups:single' slug=group.slug %}">
+                <div class="container-fluid whole-div">
+                    <div class="col-12">
                         <h3>{{ group.name }}</h3>
-                    </a>
-                </div>
+                    </div>
                     <div class="row group-row">
                         <div class="col-12">
                             Post{{ group.posts.count|pluralize }}
@@ -29,7 +28,8 @@
                     <div class="opis">
                         {{ group.description_html|safe }}
                     </div>
-            </div>
+                </div>
+            </a>
             {% endfor %}
     </div>
 {% endblock group_content %}

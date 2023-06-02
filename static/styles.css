@@ -126,6 +126,10 @@ h6 {
     margin-top: 30px;
 }
 
+.btn {
+    border-radius: 15px;
+}
+
 .containter-form {
     margin-top: -30px;
 }
@@ -171,6 +175,24 @@ label.form-label[for="id_message"] {
     margin-bottom: 30px;
 }
 
+.post-message {
+    margin-bottom: -10px;
+    font-size: 1.5rem;
+}
+
+.post-info {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.post-h {
+    font-weight: 600;
+}
+
+.posts-by-user{
+    margin-bottom: 50px;
+}
+
 /* !GROUPS */
 
 .h2-form2 {
@@ -179,12 +201,12 @@ label.form-label[for="id_message"] {
 }
 
 a {
-    color: #146C94;
+    color: #ffffff;
     text-decoration: none;
 }
 
 a:hover {
-    color: #ffffff;
+    color: #146C94;
     text-decoration: none;
 }
 
@@ -197,9 +219,44 @@ a:hover {
     font-weight:500;
 }
 
+.posty {
+    margin-bottom: 50px;
+    margin-left: 220px;
+    text-align: left;
+}
+
+.grupy-opis {
+    text-align: left;
+}
+
+.opis-2 {
+    font-size: 1.2rem;
+}
+
+.grupy-heading {
+    font-size: 1.2rem;
+}
+
+.group-name {
+    text-transform:uppercase;
+}
+
+.join-btn {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 50%;
+    font-size: 1.5rem;
+}
+
 .whole-div {
     text-align: left;
-    margin-left: 200px;
+    border-style: solid;
+    border-radius: 50px;
+    margin: 0px 0px 50px 200px;
+}
+
+.big-div {
+    margin-right: 20px;
 }
 
 /* !MEDIA QUERIES */
@@ -231,6 +288,18 @@ a:hover {
     .group-btn {
         margin-top: -20px;
         margin-bottom: 50px;
+    }
+
+    .grupy-opis {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .posty {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
     }
 }
 

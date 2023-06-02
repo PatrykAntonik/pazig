@@ -1,11 +1,16 @@
 {% extends 'grupy/group_base.html' %}
 {% block pregroup %}
-    <div class="col-md-4">
+    <div class="">
             {% if user.is_authenticated %}
             <h2 class="welcome">
                 Welcome back
             </h2>
-            <a href="{% url 'posts:for_user' username=user.username %}">@{{ user.username }}</a>
+            <a class="user" href="{% url 'posts:for_user' username=user.username %}">@{{ user.username }}</a>
+            <style>
+                .user {
+                    font-size:1.5rem;
+                }
+            </style>
             {% endif %}
     </div>
 {% endblock pregroup %}
