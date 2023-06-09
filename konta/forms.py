@@ -3,10 +3,9 @@ from django.contrib.auth.forms import UserCreationForm
 from django import forms
 
 class UserCreateForm(UserCreationForm):
-    profile_picture = forms.ImageField(required=False)
     
     class Meta:
-        fields = ('username','email','password1','password2','profile_picture')
+        fields = ('username','email','password1','password2')
 
         model = get_user_model()
         
