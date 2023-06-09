@@ -4,7 +4,7 @@
     <div class="container-fluid register-container">
         <div class="col-12">
             <h1 class="register-title">Registration</h1>
-            <form method = "POST">
+            <form method = "POST" class="register-form">
                 {% csrf_token %}
                 {% bootstrap_form form %}
                 {% buttons %}

@@ -1,15 +1,25 @@
 {% extends 'posty/post_base.html' %}
 
 {% block prepost %}
-    <div class="col-12">
-        <h1 class="posts-by-user">@{{post_user.username}}</h1>
+    <div class="row">
+        <div class="user-div col-lg-4">
+            <div>
+                {% if user.profile_picture %}
+                    <img class="user-image-posts" src="{{ user.profile_picture.url }}" alt="Profile Picture">
+                {% else %}
+                <img class="user-image-posts"
+                     src="https://cdn-icons-png.flaticon.com/512/848/848043.png?w=826&t=st=1685545988~exp=1685546588~hmac=152ae506bdb61832c96382b8a40811e7aa1b0d28a0a7c503a1cac6736ab1e351"
+                     alt="jpg"/>
+                {% endif %}
+            </div>
+            <h1 class="posts-by-user">@{{ post_user.username }}</h1>
+        </div>
+        <div class="col user-posts">
+            {% block user_posts %}
+                {% for post in post_list %}
+                    {% include 'posty/_post.html' with group=post.group %}
+                {% endfor %}
+            {% endblock user_posts %}
+        </div>
     </div>
 {% endblock prepost %}
-
-{% block post_content %}
-    <div class ="col-lg-12" >
-        {% for post in post_list %}
-            {% include 'posty/_post.html' with group=post.group hide_group_name=True %}
-        {% endfor %}
-    </div>
-{% endblock post_content %}

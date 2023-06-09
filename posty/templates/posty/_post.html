@@ -11,7 +11,7 @@
     </h5>
     {% if group and not hide_group_name and not group_list %}
     <div class="group-tag">
-        Posted in: {{ group.name }}
+        Posted in: <a href="{% url 'groups:single' slug=group.slug %}"><strong>{{ group.name }}</strong></a>
     </div>
     {% endif %}
   </div>

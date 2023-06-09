@@ -8,12 +8,13 @@
     </div>
     <h2 class="grupy-heading">Member count: {{ group.members.count }}</h2>
     {% if user.is_authenticated %}
-    <div>
+    <div class="button-div">
         {% if user in group.members.all %}
-        <button type="button" class="btn btn-outline-light btn-lg join-btn btn-post"><a href="{% url 'groups:leave' slug=group.slug %}">Leave</a></button>
+        <button type="button" class="btn btn-outline-light btn-lg join-btn btn-post gr-d-btn" onclick="window.location.href = '{% url 'groups:leave' slug=group.slug %}';">Leave</button>
         {% else %}
-        <button type="button" class="btn btn-outline-light btn-lg join-btn btn-post"><a href="{% url 'groups:join' slug=group.slug %}">Join</a></button>
+        <button type="button" class="btn btn-outline-light btn-lg join-btn btn-post gr-d-btn" onclick="window.location.href = '{% url 'groups:join' slug=group.slug %}';">Join</button>
         {% endif %}
+        <button type="button" class="btn btn-outline-light btn-lg join-btn btn-post gr-d-btn" onclick="window.location.href = '{% url 'posty:create' %}';">Post</button>
     </div>
     {% endif %}
 </div>
@@ -26,7 +27,7 @@
         {% else %}
         <h2 class="post-h">Posts:</h2>
         {% for post in group.posts.all %}
-        {% include 'posty/_post.html' %}
+        {% include 'posty/_post.html' with group=post.group hide_group_name=True %}
         {% endfor %}
         {% endif %}
     </div>

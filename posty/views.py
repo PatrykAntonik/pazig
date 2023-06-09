@@ -46,6 +46,12 @@ class CreatePost(LoginRequiredMixin,SelectRelatedMixin,CreateView):
     fields = ('message','group')
     model = models.Post
     
+    def get_form(self, form_class=None):
+        form = super().get_form(form_class)
+        joined_group_ids = GroupMember.objects.filter(user_id=self.request.user.id).values_list('group_id', flat=True)
+        form.fields['group'].queryset = Group.objects.filter(id__in=joined_group_ids)
+        return form
+    
     def form_valid(self, form):
         self.object = form.save(commit=False)
         self.object.user = self.request.user

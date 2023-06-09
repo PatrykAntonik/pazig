@@ -259,6 +259,39 @@ a:hover {
     margin-right: 20px;
 }
 
+
+.text-muted {
+    color: #FFF!important;
+    text-align: left;
+}
+
+.register-form {
+    /* text-align: left; */
+}
+
+.gr-d-btn {
+    width: 80%;
+}
+
+.user-posts {
+    text-align: left;
+    margin-left: 200px;
+}
+
+.user-image-posts {
+    width: 80px;
+    height: auto;
+    filter: invert(100%);
+    position: relative;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.user-div {
+    text-align: center;
+}
+
 /* !MEDIA QUERIES */
 
 @media (max-width: 990px) {
@@ -300,6 +333,16 @@ a:hover {
         margin-left: auto;
         margin-right: auto;
         text-align: center;
+    }
+
+    .gr-d-btn {
+        width: 50%;
+    }
+
+    .user-posts {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 

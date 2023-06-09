@@ -45,15 +45,13 @@
           {% if user.is_authenticated %}
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
+              <a class="nav-link" href="{% url 'posty:for_user' user.username %}">Profile</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="{% url 'posts:create' %}">Posts</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'groups:all' %}">Groups</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'groups:create' %}"
-                >Create group</a
-              >
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'konta:logout' %}">Logout</a>
